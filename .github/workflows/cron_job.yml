@@ -3,14 +3,14 @@
 
 name: Auto Update Grafana allowlist IPs
 
+
 on:
+  schedule:
+    - cron: '0 0 * * *'
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  schedule:
-  # Cron job every 1 hour is a commonly used cron schedule.
-    - cron: '*/5 * * * *'
 
 permissions:
   contents: read
