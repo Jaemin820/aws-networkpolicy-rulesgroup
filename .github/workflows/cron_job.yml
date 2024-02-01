@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
   schedule:
   # Cron job every 1 hour is a commonly used cron schedule.
-    - cron: '* * * * *'
+    - cron: '*/5 * * * *'
 
 permissions:
   contents: read
