@@ -3,7 +3,7 @@ name: Auto Update Grafana allowlist IPs
 on:
   schedule:
   # Cron job every 1 hour is a commonly used cron schedule.
-    - cron: '0 * * * *'
+    - cron: '* * * * *'
 
 jobs:
   build:
