@@ -6,14 +6,7 @@ name: Auto Update Grafana allowlist IPs
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-permissions:
-  contents: read
+    - cron: '0 * * * *'
 
 jobs:
   build:
@@ -31,6 +24,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests boto3
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Set up AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
     - name: Run python script
       run: |
         python scripts/test.py
