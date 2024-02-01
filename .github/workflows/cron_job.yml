@@ -34,4 +34,4 @@ jobs:
         aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
     - name: Run python script
       run: |
-        python scripts/test.py
+        python scripts/firewall_check_whitelist.py
