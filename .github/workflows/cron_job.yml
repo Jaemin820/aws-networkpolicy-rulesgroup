@@ -5,6 +5,8 @@ name: Auto Update Grafana allowlist IPs
 
 
 on:
+  push:
+    branches: [ main ]
   schedule:
     - cron: '0 * * * *'
 
