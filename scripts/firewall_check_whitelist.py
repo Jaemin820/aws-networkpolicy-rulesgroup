@@ -89,7 +89,7 @@ def main():
     ]
 
     # AWS Network Firewall client initialization
-    client = boto3.client('network-firewall', region_name='ap-northeast-2')
+    client = boto3.client('network-firewall')
 
     for url in white_list_url:
         ip_list, group_name = get_ip_list(url)
