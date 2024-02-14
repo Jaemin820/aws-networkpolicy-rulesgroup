@@ -1,2 +1,2 @@
-# Github-Action-Test
-Github Action Test
+# Aws-NetworkPolicy-RulesGroup
+Aws NetworkPolicy RulesGroup
